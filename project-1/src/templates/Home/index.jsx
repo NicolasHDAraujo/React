@@ -11,7 +11,7 @@ export const Home = () => {
   const [posts, setPosts] = useState([]);
   const [allPosts, setAllPosts] = useState([]);
   const [page, setPage] = useState(0);
-  const [postsPerPage] = useState(10);
+  const [postsPerPage] = useState(2);
   const [searchValue, setSearchValue] = useState('');
 
   const noMorePost = page + postsPerPage >= allPosts.length;
@@ -63,7 +63,7 @@ export const Home = () => {
         {!searchValue && (
           <Button
             onClick={loadMorePosts}
-            text={noMorePost === true ? 'Load more posts' : 'Not found'}
+            text={noMorePost === false ? 'Load more posts' : 'No more posts'}
             disabled={noMorePost}
           />
         )}
